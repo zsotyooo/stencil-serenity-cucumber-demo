@@ -1,0 +1,8 @@
+{
+  "title": "My Component",
+  "name": "My Component",
+  "context": {
+    "first": "John",
+    "last": "Doe"
+  }
+}

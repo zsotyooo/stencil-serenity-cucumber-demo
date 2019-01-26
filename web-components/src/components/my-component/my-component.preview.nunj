@@ -1,0 +1,2 @@
+<my-component first="{{ first }}" last="{{ last }}">
+</my-component>

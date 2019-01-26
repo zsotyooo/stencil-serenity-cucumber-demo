@@ -12,6 +12,7 @@ export const config: Config = {
   ],
   excludeSrc: [
     '**/test/**',
+    '**/testing/**',
     '**/*.spec.*',
     '**/*.e2e.*',
     '**/*.screenplay.*',

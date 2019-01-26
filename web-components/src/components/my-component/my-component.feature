@@ -7,3 +7,10 @@ Feature: See welcome message
 
      When I open the my-component preview
      Then I see the welcome text John Doe
+
+  Scenario: Changing names
+
+    Given I opened the my-component preview
+     When I change the firstname to Zsolt
+      And I change the lastname to Molnar
+     Then I see the welcome text Zsolt Molnar

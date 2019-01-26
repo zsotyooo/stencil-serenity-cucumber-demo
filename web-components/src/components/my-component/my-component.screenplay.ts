@@ -1,11 +1,42 @@
-import { by } from 'protractor';
-import { Target, Question, Text } from 'serenity-js/lib/screenplay-protractor';
+import { element } from 'protractor';
+import { byDeepCss } from '../../testing/protractor';
+import { Target, Question, Text, Enter, Is, Scroll, Task, Wait, Clear, Click } from 'serenity-js/lib/screenplay-protractor';
 
-console.log(by.deepCss('my-component'));
+const EnterName = ({
+    to: (target: Target) => {
+      return {
+        with: (text: string): Task => Task.where(`#actor enters their name as ${text}`,
+          Wait.until(target, Is.visible()),
+          Scroll.to(target),
+          Clear.theValueOf(target),
+          Enter.theValue(text).into(target)
+        )
+      }
+    }
+});
 
 export class MyComponent {
+  /*
+   * Targets
+   */
   static Welcome_Text = Target.the('My Component Welcome text')
-    .located(by.deepCss('my-component div'));
+    .located(byDeepCss('my-component::sr .my-component__greet'));
 
-  static Welcome_Text_Displayed: Question<PromiseLike<string>> = Text.of(MyComponent.Welcome_Text);
+  static Firtname_Field = Target.the('My Component Fisrtname field')
+    .located(byDeepCss('my-component::sr #firstname'));
+
+  static Lastname_Field = Target.the('My Component Lastname field')
+    .located(byDeepCss('my-component::sr #lastname'));
+  
+  /**
+   * Tasks
+   */
+  static EnterFirstName = EnterName.to(MyComponent.Firtname_Field);
+
+  static EnterLastName = EnterName.to(MyComponent.Lastname_Field);
+
+  /*
+   * Questions
+   */
+  static Welcome_Text__Displayed = Text.of(MyComponent.Welcome_Text);
 }

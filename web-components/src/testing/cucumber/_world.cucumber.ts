@@ -1,5 +1,5 @@
 import { serenity } from 'serenity-js';
-import { Actors } from '../screenplay/actors';
+import { Actors } from '../serenity/actors';
 
 export = function() {
   this.setDefaultTimeout(60 * 1000);

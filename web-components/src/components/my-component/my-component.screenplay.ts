@@ -3,8 +3,8 @@ import { byDeepCss } from '../../testing/protractor';
 import { Target, Question, Text, Enter, Is, Scroll, Task, Wait, Clear, Click } from 'serenity-js/lib/screenplay-protractor';
 
 const EnterName = ({
-  to: (target: Target) => ({
-    with: (text: string): Task => Task.where(`#actor enters their name as ${text}`,
+  into: (target: Target) => ({
+    using: (text: string): Task => Task.where(`#actor enters their name as ${text}`,
       Wait.until(target, Is.visible()),
       Scroll.to(target),
       Clear.theValueOf(target),
@@ -30,9 +30,9 @@ export class MyComponent {
   /**
    * Tasks
    */
-  static EnterFirstName = EnterName.to(MyComponent.Firtname_Field);
+  static EnterFirstName = EnterName.into(MyComponent.Firtname_Field);
 
-  static EnterLastName = EnterName.to(MyComponent.Lastname_Field);
+  static EnterLastName = EnterName.into(MyComponent.Lastname_Field);
 
   /*
    * Questions

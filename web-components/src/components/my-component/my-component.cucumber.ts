@@ -7,13 +7,13 @@ export = function() {
   
   this.When(/^(.+?) changes? the firstname to (.*?)$/, (name: string, text: string) => {
     return this.stage.theActorCalled(name).attemptsTo(
-      MyComponent.EnterFirstName.with(text) // Task
+      MyComponent.EnterFirstName.using(text) // Task
     );
   });
 
   this.When(/^(.+?) changes? the lastname to (.*?)$/, (name: string, text: string) => {
     return this.stage.theActorCalled(name).attemptsTo(
-      MyComponent.EnterLastName.with(text) // Task
+      MyComponent.EnterLastName.using(text) // Task
     );
   });
 
@@ -21,7 +21,7 @@ export = function() {
     return this.stage.theActorInTheSpotlight().attemptsTo(
       See.if(
         MyComponent.Text_of_Welcome_Message, // Question
-        (actualText) => expect(actualText).to.eventually.contain(text) // Compare
+        (actualText) => expect(actualText).to.eventually.contain(text) // Assertion
       )
     );
   });

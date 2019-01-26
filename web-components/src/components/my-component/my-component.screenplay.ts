@@ -3,23 +3,22 @@ import { byDeepCss } from '../../testing/protractor';
 import { Target, Question, Text, Enter, Is, Scroll, Task, Wait, Clear, Click } from 'serenity-js/lib/screenplay-protractor';
 
 const EnterName = ({
-    to: (target: Target) => {
-      return {
-        with: (text: string): Task => Task.where(`#actor enters their name as ${text}`,
-          Wait.until(target, Is.visible()),
-          Scroll.to(target),
-          Clear.theValueOf(target),
-          Enter.theValue(text).into(target)
-        )
-      }
-    }
+  to: (target: Target) => ({
+    with: (text: string): Task => Task.where(`#actor enters their name as ${text}`,
+      Wait.until(target, Is.visible()),
+      Scroll.to(target),
+      Clear.theValueOf(target),
+      Enter.theValue(text).into(target)
+    )
+  })
 });
 
 export class MyComponent {
+
   /*
-   * Targets
+   * Elements
    */
-  static Welcome_Text = Target.the('My Component Welcome text')
+  static Welcome_Message = Target.the('My Component Welcome message')
     .located(byDeepCss('my-component::sr .my-component__greet'));
 
   static Firtname_Field = Target.the('My Component Fisrtname field')
@@ -38,5 +37,5 @@ export class MyComponent {
   /*
    * Questions
    */
-  static Welcome_Text__Displayed = Text.of(MyComponent.Welcome_Text);
+  static Text_of_Welcome_Message = Text.of(MyComponent.Welcome_Message);
 }

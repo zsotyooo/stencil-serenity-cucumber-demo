@@ -3,7 +3,6 @@ import { Open, PerformsTasks, Task, step, Wait, Duration } from 'serenity-js/lib
 export default class Preview implements Task {
 
   static the(component: string) {
-    console.log('XXX');
     return new Preview(component);
   }
 

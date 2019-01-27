@@ -20,7 +20,7 @@ exports.config = {
     specs: [ '../web-components/src/components/**/*.feature' ],
 
     cucumberOpts: {
-        require:    [ '../web-components/src/**/*.cucumber.ts' ],
+        require:    [ '../web-components/src/**/*.feature.ts' ],
         format:     'pretty',
         compiler:   'ts:ts-node/register',
         tags:       [ '~@wip' ]

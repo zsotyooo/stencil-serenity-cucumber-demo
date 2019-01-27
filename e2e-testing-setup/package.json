@@ -7,6 +7,7 @@
     "clean": "rimraf target",
     "preprotractor": "webdriver-manager update --gecko=false",
     "protractor": "protractor ./protractor.conf.js",
+    "dev": "protractor ./protractor.conf.js",
     "pretest": "serenity update",
     "report": "serenity run",
     "showreport": "http-server target/site/serenity -p 4100 -o",

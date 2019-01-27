@@ -1,16 +1,18 @@
-Feature: See welcome message
+Feature: Using the my-component
 
   In order to make the user feel welcomed
   The user should see a welcome message
 
-  Scenario: Seeing the name of the user
+  Scenario Outline: Seeing the welcome message
 
-     When I open the my-component preview
-     Then I see the welcome text John Doe
+  Scenario: Seeing the default name
 
-  Scenario: Changing names
+    Given that John opened the my-component preview
+     Then he sees the welcome text John Doe
 
-    Given I opened the my-component preview
-     When I change the firstname to Zsolt
-      And I change the lastname to Molnar
-     Then I see the welcome text Zsolt Molnar
+  Scenario: Changing the name
+
+    Given that Alice opened the my-component preview
+     When Alice changes the firstname to Alice
+      And Alice changes the lastname to Cooper
+     Then she sees the welcome text Alice Cooper

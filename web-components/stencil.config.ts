@@ -16,7 +16,7 @@ export const config: Config = {
     '**/*.spec.*',
     '**/*.e2e.*',
     '**/*.screenplay.*',
-    '**/*.showcase.*',
-    '**/*.cucumber.*'
+    '**/*.preview.*',
+    '**/*.feature.*'
   ]
 };

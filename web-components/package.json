@@ -18,14 +18,19 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@types/chai": "4.1.4",
-    "@types/chai-as-promised": "7.1.0",
     "@frctl/fractal": "^1.1.7",
     "@frctl/nunjucks": "^1.0.3",
     "@stencil/core": "~0.16.2",
+    "@types/chai": "4.1.4",
+    "@types/chai-as-promised": "7.1.0",
+    "@types/jest": "23.3.13",
+    "@types/puppeteer": "1.11.2",
     "chai": "4.1.2",
     "chai-as-promised": "7.1.1",
+    "jest": "23.6.0",
+    "jest-cli": "23.6.0",
     "protractor": "5.3.2",
+    "puppeteer": "1.8.0",
     "serenity-js": ">= 1.10.13"
   },
   "license": "MIT"

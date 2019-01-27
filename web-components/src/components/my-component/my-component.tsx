@@ -1,4 +1,4 @@
-import { Component, Prop, State } from '@stencil/core';
+import { Component, Prop, State, Watch } from '@stencil/core';
 import { format } from '../../utils/utils';
 
 @Component({
@@ -27,6 +27,16 @@ export class MyComponent {
    */
   @State() stateLast: string;
 
+  @Watch('first')
+  onFirstChange(value: string) {
+    this.stateFirst = value ? value : '';
+  }
+
+  @Watch('last')
+  onLastChange(value: string) {
+    this.stateLast = value ? value : '';
+  }
+
   private getText(): string {
     return format(this.stateFirst, this.stateLast);
   }
@@ -34,15 +44,15 @@ export class MyComponent {
   private handleNameChange(field, e: Event) {
     const value = e.target ? (e.target as any).value : '';
     if (field == 'first') {
-      this.stateFirst = value;
+      this.stateFirst = value ? value : '';
     } else {
-      this.stateLast = value;
+      this.stateLast = value ? value : '';
     }
   }
 
   componentDidLoad() {
-    this.stateFirst = this.first;
-    this.stateLast = this.last;
+    this.stateFirst = this.first ? this.first : '';
+    this.stateLast = this.last ? this.last : '';
   }
 
   render() {

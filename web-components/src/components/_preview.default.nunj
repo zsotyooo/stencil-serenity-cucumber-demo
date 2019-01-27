@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <title>Preview Layout</title>
-
-  <script type="text/javascript" src="{{ '/mycomponent.js' | path }}"></script>
 </head>
 <body>
   {{ yield }}
+  
+  <script type="text/javascript" src="{{ '/mycomponent.js' | path }}"></script>
 </body>
 </html>

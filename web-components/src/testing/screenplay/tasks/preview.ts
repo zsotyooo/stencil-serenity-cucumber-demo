@@ -2,7 +2,7 @@ import { Open, PerformsTasks, Task, step, Wait, Duration } from 'serenity-js/lib
 
 export default class Preview implements Task {
 
-  static the(component: string) {
+  static the(component: string): Preview {
     return new Preview(component);
   }
 
@@ -11,8 +11,8 @@ export default class Preview implements Task {
   @step('{0} previews the #component component')
   performAs(actor: PerformsTasks): PromiseLike<void> {
     return actor.attemptsTo(
-      Open.browserOn(`components/preview/${this.component}`),
-      Wait.for(Duration.ofSeconds(3))
+      Open.browserOn(`components/preview/${this.component}`), // Interaction
+      Wait.for(Duration.ofSeconds(3)) // Interaction
     );
   }
 }

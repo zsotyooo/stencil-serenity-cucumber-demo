@@ -1,4 +1,4 @@
 import { serenity } from 'serenity-js';
-import { Actors } from './actors';
+import { WebsiteUsers } from './cast';
 
-export default serenity.callToStageFor(new Actors());
+export default serenity.callToStageFor(new WebsiteUsers());

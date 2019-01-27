@@ -19,10 +19,10 @@ const Lastname_Field = Target.the('My Component Lastname field')
 const EnterName = ({
   into: (target: Target) => ({
     using: (text: string): Task => Task.where(`#actor enters their name as ${text}`,
-      Wait.until(target, Is.visible()),
-      Scroll.to(target),
-      Clear.theValueOf(target),
-      Enter.theValue(text).into(target)
+      Wait.until(target, Is.visible()), // Interaction
+      Scroll.to(target), // Interaction
+      Clear.theValueOf(target), // Interaction
+      Enter.theValue(text).into(target) // Interaction
     )
   })
 });

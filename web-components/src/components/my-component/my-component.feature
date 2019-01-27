@@ -7,7 +7,7 @@ Feature: Using the my-component
 
   Scenario: Seeing the default name
 
-    Given that John opened the my-component preview
+     When John opens the my-component preview
      Then he sees the welcome text John Doe
 
   Scenario: Changing the name

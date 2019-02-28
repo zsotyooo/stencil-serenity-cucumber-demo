@@ -13,7 +13,7 @@ declare var document:any;
  *   O  parentElement.all(by.css_sr('::sr .inner-element'))         <=> parentElement.shadowRoot.$$('.inner-element')
  */
 by.addLocator('css_sr', (cssSelector: string, opt_parentElement, opt_rootSelector) => {
-    let selectors = cssSelector.split('::sr');
+    let selectors = cssSelector.split(' >>>');
     if (selectors.length === 0) {
         return [];
     }

@@ -5,13 +5,13 @@ import { Target, Text, Enter, Is, Scroll, Task, Wait, Clear } from 'serenity-js/
  * Targets
  */
 const Welcome_Message = Target.the('My Component Welcome message')
-  .located(byDeepCss('my-component::sr .my-component__greet'));
+  .located(byDeepCss('my-component >>> .my-component__greet'));
 
 const Firtname_Field = Target.the('My Component Fisrtname field')
-  .located(byDeepCss('my-component::sr #firstname'));
+  .located(byDeepCss('my-component >>> #firstname'));
 
 const Lastname_Field = Target.the('My Component Lastname field')
-  .located(byDeepCss('my-component::sr #lastname'));
+  .located(byDeepCss('my-component >>> #lastname'));
 
 /**
  * Task services
